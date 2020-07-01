@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "primero": {
+    "segundo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/primero",
+            "outputPath": "dist/segundo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "primero:build"
+            "browserTarget": "segundo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "primero:build:production"
+              "browserTarget": "segundo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "primero:build"
+            "browserTarget": "segundo:build"
           }
         },
         "test": {
@@ -110,15 +110,20 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "primero:serve"
+            "devServerTarget": "segundo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "primero:serve:production"
+              "devServerTarget": "segundo:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "primero"
+    }
+  },
+  "defaultProject": "segundo"
 }
